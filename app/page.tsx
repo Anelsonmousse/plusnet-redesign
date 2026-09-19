@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Button from "@/components/Button";
+import HomeHero from "@/components/HomeHero";
 import NewsletterForm from "@/components/NewsletterForm";
 import Section from "@/components/Section";
 
@@ -45,44 +46,7 @@ const supportLinks = [
 export default function Home() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-slate text-white">
-        <Image
-          src="/images/hero.jpg"
-          alt=""
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="container-site relative grid gap-10 py-24 md:grid-cols-2 md:py-36">
-          <div>
-            <h1 className="text-3xl font-extrabold leading-tight md:text-5xl">
-              Discover the new World
-            </h1>
-            <p className="mt-4 max-w-md text-base font-light leading-relaxed text-white/90 md:text-lg">
-              Plusnet unlimited fiber offers a wide range of options to suit
-              your every needs
-            </p>
-            <Button href="/our-network" className="mt-7">
-              Learn more
-            </Button>
-          </div>
-          <div className="md:border-l md:border-white/20 md:pl-12">
-            <h2 className="text-3xl font-extrabold leading-tight md:text-5xl">
-              Advance Network
-            </h2>
-            <p className="mt-4 max-w-md text-base font-light leading-relaxed text-white/90 md:text-lg">
-              We’ve built one of the most advanced ISP networks in Nigeria,
-              giving you high speed unlimited connectivity.
-            </p>
-            <Button href="/our-network" variant="white" className="mt-7">
-              Learn more
-            </Button>
-          </div>
-        </div>
-      </section>
+      <HomeHero />
 
       {/* Feature cards */}
       <Section>

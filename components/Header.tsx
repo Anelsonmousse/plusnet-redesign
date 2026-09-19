@@ -57,7 +57,7 @@ export default function Header() {
       </div>
 
       {/* Main nav */}
-      <div className="container-site flex items-center justify-between py-3">
+      <div className="container-site flex items-center justify-between gap-6 py-3">
         <Link href="/" className="shrink-0" aria-label="Plusnet home">
           <Image
             src="/images/logo.png"
@@ -69,7 +69,7 @@ export default function Header() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Main">
+        <nav className="hidden flex-1 items-center justify-center gap-10 lg:flex" aria-label="Main">
           {nav.map((item) => {
             const active =
               item.href === "/"
@@ -80,12 +80,17 @@ export default function Header() {
               <div key={item.label} className="group relative">
                 <Link
                   href={item.href}
-                  className={`flex items-center gap-1.5 py-2 text-[13px] font-semibold uppercase tracking-wide transition-colors hover:text-brand ${
-                    active ? "text-brand" : "text-white"
+                  className={`relative flex items-center gap-1.5 py-2 text-[15px] font-normal tracking-tight transition-colors hover:text-white ${
+                    active ? "text-white" : "text-white/80"
                   }`}
                 >
                   {item.label}
-                  {item.children && <Chevron className="opacity-70" />}
+                  {item.children && <Chevron className="opacity-60" />}
+                  <span
+                    className={`absolute -bottom-0.5 left-1/2 h-px w-10 -translate-x-1/2 rounded-full bg-brand shadow-[0_0_10px_2px_rgba(224,43,32,0.7)] transition-opacity ${
+                      active ? "opacity-100" : "opacity-0"
+                    }`}
+                  />
                 </Link>
                 {item.children && (
                   <div className="invisible absolute left-0 top-full pt-2 opacity-0 transition-all group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
@@ -94,7 +99,7 @@ export default function Header() {
                         <li key={c.label}>
                           <Link
                             href={c.href}
-                            className="block px-5 py-2.5 text-xs font-medium uppercase tracking-wide text-white/90 hover:bg-white/5 hover:text-brand"
+                            className="block px-5 py-2.5 text-sm text-white/90 hover:bg-white/5 hover:text-brand"
                           >
                             {c.label}
                           </Link>
@@ -107,6 +112,13 @@ export default function Header() {
             );
           })}
         </nav>
+
+        <Link
+          href="/contact-us"
+          className="hidden bg-white px-10 py-3.5 text-sm font-medium text-black transition-colors hover:bg-brand hover:text-white lg:block"
+        >
+          Get Connected
+        </Link>
 
         <button
           type="button"
