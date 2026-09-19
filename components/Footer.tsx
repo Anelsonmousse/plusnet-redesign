@@ -31,8 +31,8 @@ export default function Footer() {
             <Image
               src="/images/logo.png"
               alt="Plusnet"
-              width={205}
-              height={61}
+              width={1200}
+              height={536}
               className="h-12 w-auto"
             />
           </Link>
