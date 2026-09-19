@@ -11,12 +11,19 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://plusnet.ng"),
   title: {
     default: "Plusnet Broadband Services Limited",
     template: "%s | Plusnet Broadband Services Limited",
   },
   description:
     "Plusnet unlimited fibre broadband — one of the most advanced ISP networks in Nigeria, giving you high speed unlimited connectivity.",
+  openGraph: {
+    type: "website",
+    siteName: "Plusnet Broadband Services Limited",
+    locale: "en_NG",
+  },
+  twitter: { card: "summary_large_image" },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
