@@ -88,13 +88,13 @@ export default function Header() {
       <div
         className={`transition-all duration-300 ${
           scrolled
-            ? "container-wide rounded-2xl border border-white/10 bg-black/85 shadow-lg shadow-black/40 backdrop-blur-md"
+            ? "mx-auto w-full max-w-5xl rounded-2xl border border-white/10 bg-black/85 shadow-lg shadow-black/40 backdrop-blur-md"
             : ""
         }`}
       >
         <div
           className={`flex items-center justify-between gap-6 transition-[padding] duration-300 ${
-            scrolled ? "px-1 py-3 md:px-2" : "container-wide py-2"
+            scrolled ? "px-4 py-4 md:px-6" : "container-wide py-2"
           }`}
         >
           <Link href="/" className="shrink-0" aria-label="Plusnet home">
