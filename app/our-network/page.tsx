@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import HeroFigure from "@/components/HeroFigure";
-import { tornEdge } from "@/lib/torn";
+import DarkCta from "@/components/DarkCta";
+import DarkHero from "@/components/DarkHero";
+import TornCard from "@/components/TornCard";
 
 export const metadata: Metadata = { title: "Our Network" };
 
@@ -30,65 +29,21 @@ const flexModes = [
   "Disaster situation (e.g. unexpected large-scale network failure or a major news event)",
 ];
 
-const edges = [13, 37, 61].map((s) => tornEdge(s));
-
 export default function OurNetwork() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative isolate overflow-hidden bg-black text-white">
-        <div className="container-site relative pb-16 pt-10 md:pt-12 lg:pb-20">
-          <div className="flex items-start justify-between text-xs font-light text-white/70">
-            <span>[Our network]</span>
-            <span className="rounded-md border border-white/40 px-1.5 py-1 text-[10px] leading-none tracking-wider">
-              NG
-            </span>
-          </div>
-
-          <h1 className="mt-6 text-[9vw] font-extrabold uppercase leading-[1] tracking-tight sm:text-[6.5vw] lg:text-[4.4rem]">
-            <span className="block">One of Nigeria’s</span>
-            <span className="block text-brand md:pl-[8%]">Most advanced</span>
-            <span className="block md:pl-[3%]">
-              ISP networks{" "}
-              <span className="inline-flex h-[0.9em] w-[1.6em] items-center justify-center rounded-full bg-brand align-middle">
-                <Image
-                  src="/images/logo-mark.png"
-                  alt=""
-                  width={64}
-                  height={64}
-                  className="h-[0.8em] w-[0.8em] brightness-0 invert"
-                />
-              </span>
-            </span>
-            <span className="block text-brand md:pl-[14%]">Owned by us</span>
-          </h1>
-
-          <div className="relative mt-8 max-w-xl md:mt-10">
-            <p className="text-sm font-light leading-relaxed text-white/80 md:text-base">
-              Unlike some of our competitors, we own and manage our broadband
-              platform, investing heavily in our network capacity and dynamic
-              traffic management systems. That’s because we believe our
-              customers deserve the best broadband experience possible.
-            </p>
-            <ul className="mt-8 flex flex-wrap gap-3">
-              {heroTags.map((t) => (
-                <li
-                  key={t}
-                  className="rounded-full border border-white/40 px-5 py-2.5 text-xs font-medium backdrop-blur-sm"
-                >
-                  {t}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Figure pinned bottom-right on larger screens */}
-          <div className="pointer-events-none absolute bottom-0 right-[4%] hidden lg:block">
-            <div className="absolute inset-x-0 bottom-0 h-56 bg-[radial-gradient(ellipse_at_bottom,rgba(224,43,32,0.28),transparent_65%)]" />
-            <HeroFigure className="relative h-[30rem] w-auto" />
-          </div>
-        </div>
-      </section>
+      <DarkHero
+        label="Our network"
+        lines={[
+          { text: "One of Nigeria’s" },
+          { text: "Most advanced", red: true, indent: "md:pl-[8%]" },
+          { text: "ISP networks", mark: true, indent: "md:pl-[3%]" },
+          { text: "Owned by us", red: true, indent: "md:pl-[14%]" },
+        ]}
+        intro="Unlike some of our competitors, we own and manage our broadband platform, investing heavily in our network capacity and dynamic traffic management systems. That’s because we believe our customers deserve the best broadband experience possible."
+        tags={heroTags}
+        figure
+      />
 
       {/* Benefits — torn-edge cards */}
       <section className="bg-black py-16 text-white md:py-24">
@@ -112,30 +67,14 @@ export default function OurNetwork() {
 
             <div className="grid gap-6 sm:grid-cols-3">
               {benefits.map((b, i) => (
-                <div
+                <TornCard
                   key={b.title}
-                  style={{ clipPath: edges[i] }}
-                  className={`flex flex-col px-6 pb-8 pt-9 ${
-                    b.featured
-                      ? "bg-brand-dark text-white sm:-mt-8 sm:pb-12"
-                      : "bg-white text-ink"
-                  }`}
-                >
-                  <h3
-                    className={`whitespace-pre-line text-xl font-extrabold leading-tight ${
-                      b.featured ? "text-white" : "text-brand-dark"
-                    }`}
-                  >
-                    {b.title}
-                  </h3>
-                  <p
-                    className={`mt-4 text-sm font-light leading-relaxed ${
-                      b.featured ? "text-white/85" : "text-ink/75"
-                    }`}
-                  >
-                    {b.text}
-                  </p>
-                </div>
+                  seed={13 + i * 24}
+                  title={b.title}
+                  text={b.text}
+                  featured={b.featured}
+                  raise={b.featured}
+                />
               ))}
             </div>
           </div>
@@ -268,22 +207,11 @@ export default function OurNetwork() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="border-t border-white/10 bg-black py-16 text-white md:py-20">
-        <div className="container-site flex flex-col items-center gap-8 text-center md:flex-row md:justify-between md:text-left">
-          <h2 className="text-3xl font-extrabold uppercase leading-[1] tracking-tight md:text-4xl">
-            Great value
-            <br />
-            <span className="text-brand">unlimited broadband</span>
-          </h2>
-          <Link
-            href="/package-guide"
-            className="rounded-md bg-white px-8 py-3.5 text-xs font-bold uppercase tracking-wider text-black transition-colors hover:bg-brand hover:text-white"
-          >
-            View packages
-          </Link>
-        </div>
-      </section>
+      <DarkCta
+        title="Great value"
+        accent="unlimited broadband"
+        actions={[{ label: "View packages", href: "/package-guide" }]}
+      />
     </>
   );
 }

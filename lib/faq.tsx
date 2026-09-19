@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 export type Faq = { q: string; a: ReactNode };
 
 const H = ({ children }: { children: ReactNode }) => (
-  <h4 className="mt-5 font-bold text-ink">{children}</h4>
+  <h4 className="mt-5 font-bold text-white">{children}</h4>
 );
 const UL = ({ items }: { items: string[] }) => (
   <ul className="mt-2 list-disc space-y-1.5 pl-5">

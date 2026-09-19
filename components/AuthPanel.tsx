@@ -29,7 +29,7 @@ export default function AuthPanel() {
   }
 
   return (
-    <div className="mx-auto w-full max-w-md rounded-2xl bg-white p-8 shadow-lg">
+    <div className="mx-auto w-full max-w-md rounded-xl bg-white p-8 text-ink shadow-lg">
       <p className="text-center text-sm font-light text-ink/80">
         Please login or create an account to access the Customer Support Portal
       </p>
