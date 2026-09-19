@@ -61,7 +61,7 @@ export default function WhatWeDo() {
         </div>
 
         {/* Headline */}
-        <h2 className="mt-4 text-center text-[7.5vw] font-extrabold uppercase leading-[1] tracking-tight sm:text-[6.5vw] lg:text-[4.6rem]">
+        <h2 className="mt-4 text-center text-[6.5vw] font-extrabold uppercase leading-[1] tracking-tight sm:text-[5vw] lg:text-[3.4rem]">
           <span className="block">We connect</span>
           <span className="block text-brand md:-translate-x-[12%]">
             Homes and businesses
