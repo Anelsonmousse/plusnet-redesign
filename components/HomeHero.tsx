@@ -11,7 +11,7 @@ const stats = [
 export default function HomeHero() {
   return (
     <section className="relative isolate overflow-hidden bg-black text-white">
-      <div className="container-site relative flex flex-col md:min-h-[calc(100svh-6.5rem)]">
+      <div className="container-site relative flex flex-col md:min-h-[calc(100svh-5.25rem)]">
         {/* Headline */}
         <div className="pointer-events-none relative z-10 mt-10 select-none md:mt-12">
           <h1 className="whitespace-nowrap text-center font-medium leading-[0.85] tracking-[-0.06em] text-[#d9d9d9]">

@@ -30,13 +30,13 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-black text-white shadow-md">
       {/* Top contact bar */}
       <div className="border-b border-white/10">
-        <div className="container-site flex items-center justify-between gap-4 py-2 text-xs font-light">
+        <div className="container-wide flex items-center justify-between gap-4 py-1.5 text-[11px] font-light">
           <div className="flex items-center gap-5">
             <a
               href={`mailto:${site.email}`}
               className="flex items-center gap-2 hover:text-brand"
             >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4 w-4 text-slate">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-3.5 w-3.5 text-slate">
                 <rect x="3" y="5" width="18" height="14" rx="2" />
                 <path d="M3 7l9 6 9-6" />
               </svg>
@@ -46,7 +46,7 @@ export default function Header() {
               href={`tel:${site.phone}`}
               className="flex items-center gap-2 hover:text-brand"
             >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4 w-4 text-slate">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-3.5 w-3.5 text-slate">
                 <path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v3a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z" />
               </svg>
               <span>{site.phone}</span>
@@ -57,7 +57,7 @@ export default function Header() {
       </div>
 
       {/* Main nav */}
-      <div className="container-site flex items-center justify-between gap-6 py-3">
+      <div className="container-wide flex items-center justify-between gap-6 py-2">
         <Link href="/" className="shrink-0" aria-label="Plusnet home">
           <Image
             src="/images/logo.png"
@@ -65,11 +65,11 @@ export default function Header() {
             width={205}
             height={61}
             priority
-            className="h-11 w-auto"
+            className="h-8 w-auto"
           />
         </Link>
 
-        <nav className="hidden flex-1 items-center justify-center gap-10 lg:flex" aria-label="Main">
+        <nav className="hidden flex-1 items-center justify-center gap-8 lg:flex" aria-label="Main">
           {nav.map((item) => {
             const active =
               item.href === "/"
@@ -80,14 +80,14 @@ export default function Header() {
               <div key={item.label} className="group relative">
                 <Link
                   href={item.href}
-                  className={`relative flex items-center gap-1.5 py-2 text-[15px] font-normal tracking-tight transition-colors hover:text-white ${
+                  className={`relative flex items-center gap-1.5 py-2 text-[13px] font-normal tracking-tight transition-colors hover:text-white ${
                     active ? "text-white" : "text-white/80"
                   }`}
                 >
                   {item.label}
                   {item.children && <Chevron className="opacity-60" />}
                   <span
-                    className={`absolute -bottom-0.5 left-1/2 h-px w-10 -translate-x-1/2 rounded-full bg-brand shadow-[0_0_10px_2px_rgba(224,43,32,0.7)] transition-opacity ${
+                    className={`absolute -bottom-0.5 left-1/2 h-px w-8 -translate-x-1/2 rounded-full bg-brand shadow-[0_0_10px_2px_rgba(224,43,32,0.7)] transition-opacity ${
                       active ? "opacity-100" : "opacity-0"
                     }`}
                   />
@@ -115,7 +115,7 @@ export default function Header() {
 
         <Link
           href="/contact-us"
-          className="hidden bg-white px-10 py-3.5 text-sm font-medium text-black transition-colors hover:bg-brand hover:text-white lg:block"
+          className="hidden bg-white px-7 py-2.5 text-xs font-medium text-black transition-colors hover:bg-brand hover:text-white lg:block"
         >
           Get Connected
         </Link>
@@ -144,7 +144,7 @@ export default function Header() {
         hidden={!open}
         className="border-t border-white/10 bg-black lg:hidden"
       >
-        <ul className="container-site py-2">
+        <ul className="container-wide py-2">
           {nav.map((item) => (
             <li key={item.label} className="border-b border-white/10 last:border-0">
               <div className="flex items-center justify-between">

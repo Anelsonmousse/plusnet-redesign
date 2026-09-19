@@ -21,8 +21,8 @@ export default function SocialIcons({
 }: {
   size?: "sm" | "md";
 }) {
-  const box = size === "sm" ? "h-6 w-6" : "h-9 w-9";
-  const svg = size === "sm" ? "h-3.5 w-3.5" : "h-5 w-5";
+  const box = size === "sm" ? "h-5 w-5" : "h-9 w-9";
+  const svg = size === "sm" ? "h-3 w-3" : "h-5 w-5";
   return (
     <ul className="flex items-center gap-2">
       {(Object.keys(icons) as Array<keyof typeof icons>).map((k) => (
