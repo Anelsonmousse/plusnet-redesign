@@ -156,10 +156,10 @@ export default function Header() {
           </nav>
 
           <Link
-            href="/contact-us"
-            className="hidden bg-white px-7 py-2.5 text-xs font-medium text-black transition-colors hover:bg-brand hover:text-white lg:block"
+            href="/support-portal"
+            className="hidden rounded-md bg-white px-7 py-2.5 text-xs font-medium text-black transition-colors hover:bg-brand hover:text-white lg:block"
           >
-            Get Connected
+            Login
           </Link>
 
           <button
