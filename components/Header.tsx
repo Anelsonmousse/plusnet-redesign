@@ -102,7 +102,7 @@ export default function Header() {
               src="/images/logo.png"
               alt="Plusnet"
               width={1200}
-              height={536}
+              height={478}
               priority
               className="h-16 w-auto"
             />
