@@ -1,7 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
+import Ribbon from "./Ribbon";
 import SocialIcons from "./SocialIcons";
+
+const ribbonTags = [
+  "Unlimited Fibre",
+  "Business Broadband",
+  "Dedicated Internet",
+  "Managed MPLS",
+  "24/7 Support",
+];
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -80,7 +89,8 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-white/10">
+      <Ribbon tags={ribbonTags} fixed />
+      <div>
         <div className="container-site py-5 text-center text-xs font-light text-white/60">
           Copyright © {new Date().getFullYear()} {site.name}
         </div>

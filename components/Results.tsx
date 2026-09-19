@@ -1,14 +1,5 @@
 import Link from "next/link";
 import HeroFigure from "./HeroFigure";
-import Ribbon from "./Ribbon";
-
-const ribbonTags = [
-  "Unlimited Fibre",
-  "Business Broadband",
-  "Dedicated Internet",
-  "Managed MPLS",
-  "24/7 Support",
-];
 
 const stats = [
   {
@@ -59,15 +50,13 @@ export default function Results() {
         PLUS+
       </div>
 
-      {/* Headline + ribbons */}
+      {/* Headline */}
       <div className="relative">
         <h2 className="relative z-10 text-center text-[16vw] font-black uppercase leading-[0.85] tracking-tight sm:text-[12vw] lg:text-[8.5rem]">
           Our
           <br />
           Results
         </h2>
-        <Ribbon tags={ribbonTags} className="top-1/2 z-20 -translate-y-1/2 -rotate-[5deg]" />
-        <Ribbon tags={ribbonTags} reverse className="top-1/2 z-20 -translate-y-1/2 rotate-[5deg]" />
       </div>
 
       {/* Figure + stat cards */}
