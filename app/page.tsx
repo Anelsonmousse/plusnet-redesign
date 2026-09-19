@@ -1,40 +1,9 @@
 import Image from "next/image";
-import Link from "next/link";
 import Button from "@/components/Button";
 import HomeHero from "@/components/HomeHero";
 import NewsletterForm from "@/components/NewsletterForm";
 import Section from "@/components/Section";
-
-const features = [
-  {
-    title: "Easy To Switch",
-    icon: "/images/icon-switch.png",
-    text: "We’ll make switching provider simple, fast and hassle free, giving you the time to focus on your important day-to-day business.",
-    cta: "Find out how to switch",
-    href: "/switching-to-plusnet",
-  },
-  {
-    title: "Our Network",
-    icon: "/images/icon-network.png",
-    text: "We’ve built one of the most advanced ISP networks in Nigeria. We own and manage our broadband platform, investing heavily in capacity and resilience.",
-    cta: "Our network explained",
-    href: "/our-network",
-  },
-  {
-    title: "Unlimited",
-    icon: "/images/icon-unlimited.png",
-    text: "Take a look at all our great-value, unlimited broadband and low-cost fibre packages. Find a deal to suit you.",
-    cta: "View our packages",
-    href: "/package-guide",
-  },
-  {
-    title: "Partner with us",
-    icon: "/images/icon-partner.png",
-    text: "Resell our products & services, either as a Partner or Dealer, or recommend Plusnet to others for monthly referral rewards.",
-    cta: "Become a partner",
-    href: "/partner-with-us",
-  },
-];
+import WhatWeDo from "@/components/WhatWeDo";
 
 const supportLinks = [
   { label: "Read our FAQ", href: "/frequently-asked-questions" },
@@ -48,35 +17,7 @@ export default function Home() {
     <>
       <HomeHero />
 
-      {/* Feature cards */}
-      <Section>
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {features.map((f) => (
-            <div
-              key={f.title}
-              className="flex flex-col rounded-2xl border border-black/5 bg-white p-8 text-center shadow-[0_10px_40px_-15px_rgba(0,0,0,0.15)] transition-transform hover:-translate-y-1"
-            >
-              <Image
-                src={f.icon}
-                alt=""
-                width={96}
-                height={96}
-                className="mx-auto h-24 w-24"
-              />
-              <h3 className="mt-6 text-xl font-bold">{f.title}</h3>
-              <p className="mt-3 flex-1 text-sm font-light leading-relaxed text-ink/80">
-                {f.text}
-              </p>
-              <Link
-                href={f.href}
-                className="mt-6 text-xs font-bold uppercase tracking-wider text-brand hover:underline"
-              >
-                {f.cta} →
-              </Link>
-            </div>
-          ))}
-        </div>
-      </Section>
+      <WhatWeDo />
 
       {/* Newsletter */}
       <section className="bg-slate text-white">
