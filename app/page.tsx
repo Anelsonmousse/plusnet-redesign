@@ -1,69 +1,192 @@
 import Image from "next/image";
+import Link from "next/link";
+import Button from "@/components/Button";
+import NewsletterForm from "@/components/NewsletterForm";
+import Section from "@/components/Section";
+
+const features = [
+  {
+    title: "Easy To Switch",
+    icon: "/images/icon-switch.png",
+    text: "We’ll make switching provider simple, fast and hassle free, giving you the time to focus on your important day-to-day business.",
+    cta: "Find out how to switch",
+    href: "/switching-to-plusnet",
+  },
+  {
+    title: "Our Network",
+    icon: "/images/icon-network.png",
+    text: "We’ve built one of the most advanced ISP networks in Nigeria. We own and manage our broadband platform, investing heavily in capacity and resilience.",
+    cta: "Our network explained",
+    href: "/our-network",
+  },
+  {
+    title: "Unlimited",
+    icon: "/images/icon-unlimited.png",
+    text: "Take a look at all our great-value, unlimited broadband and low-cost fibre packages. Find a deal to suit you.",
+    cta: "View our packages",
+    href: "/package-guide",
+  },
+  {
+    title: "Partner with us",
+    icon: "/images/icon-partner.png",
+    text: "Resell our products & services, either as a Partner or Dealer, or recommend Plusnet to others for monthly referral rewards.",
+    cta: "Become a partner",
+    href: "/partner-with-us",
+  },
+];
+
+const supportLinks = [
+  { label: "Read our FAQ", href: "/frequently-asked-questions" },
+  { label: "Read our Blog", href: "/frequently-asked-questions" },
+  { label: "Contact Support", href: "/support-portal" },
+  { label: "Sales Enquiry", href: "/contact-us" },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <>
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-slate text-white">
         <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          src="/images/hero.jpg"
+          alt=""
+          fill
           priority
+          className="object-cover"
+          sizes="100vw"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="container-site relative grid gap-10 py-24 md:grid-cols-2 md:py-36">
+          <div>
+            <h1 className="text-3xl font-extrabold leading-tight md:text-5xl">
+              Discover the new World
+            </h1>
+            <p className="mt-4 max-w-md text-base font-light leading-relaxed text-white/90 md:text-lg">
+              Plusnet unlimited fiber offers a wide range of options to suit
+              your every needs
+            </p>
+            <Button href="/our-network" className="mt-7">
+              Learn more
+            </Button>
+          </div>
+          <div className="md:border-l md:border-white/20 md:pl-12">
+            <h2 className="text-3xl font-extrabold leading-tight md:text-5xl">
+              Advance Network
+            </h2>
+            <p className="mt-4 max-w-md text-base font-light leading-relaxed text-white/90 md:text-lg">
+              We’ve built one of the most advanced ISP networks in Nigeria,
+              giving you high speed unlimited connectivity.
+            </p>
+            <Button href="/our-network" variant="white" className="mt-7">
+              Learn more
+            </Button>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Feature cards */}
+      <Section>
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {features.map((f) => (
+            <div
+              key={f.title}
+              className="flex flex-col rounded-2xl border border-black/5 bg-white p-8 text-center shadow-[0_10px_40px_-15px_rgba(0,0,0,0.15)] transition-transform hover:-translate-y-1"
+            >
+              <Image
+                src={f.icon}
+                alt=""
+                width={96}
+                height={96}
+                className="mx-auto h-24 w-24"
+              />
+              <h3 className="mt-6 text-xl font-bold">{f.title}</h3>
+              <p className="mt-3 flex-1 text-sm font-light leading-relaxed text-ink/80">
+                {f.text}
+              </p>
+              <Link
+                href={f.href}
+                className="mt-6 text-xs font-bold uppercase tracking-wider text-brand hover:underline"
+              >
+                {f.cta} →
+              </Link>
+            </div>
+          ))}
         </div>
-      </main>
-    </div>
+      </Section>
+
+      {/* Newsletter */}
+      <section className="bg-slate text-white">
+        <div className="container-site flex flex-col items-center justify-between gap-6 py-10 md:flex-row">
+          <div>
+            <h2 className="text-2xl font-bold">Love offers and discounts?</h2>
+            <p className="mt-1 font-light text-white/90">Subscribe and save.</p>
+          </div>
+          <NewsletterForm />
+        </div>
+      </section>
+
+      {/* Value / support */}
+      <Section tone="mist">
+        <div className="grid items-center gap-12 md:grid-cols-2">
+          <div>
+            <h2 className="text-3xl font-extrabold leading-tight md:text-4xl">
+              We don’t
+              <br />
+              compromise on
+              <br />
+              value or service.
+            </h2>
+            <p className="mt-6 text-base font-light leading-relaxed text-ink/80">
+              We continue to lead the way on satisfaction, that’s why our
+              customers are more satisfied than those of our competitors.
+              Unrivaled phone and on-line support from our dedicated 24/7
+              Support Team.
+            </p>
+            <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+              {supportLinks.map((l) => (
+                <li key={l.label}>
+                  <Button href={l.href} variant="outline" className="w-full text-center">
+                    {l.label}
+                  </Button>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <Image
+            src="/images/support.png"
+            alt="Plusnet customer support"
+            width={412}
+            height={358}
+            className="mx-auto w-full max-w-sm"
+          />
+        </div>
+      </Section>
+
+      {/* Network */}
+      <Section>
+        <div className="grid items-center gap-12 md:grid-cols-2">
+          <Image
+            src="/images/network-illustration.png"
+            alt="Plusnet network infrastructure"
+            width={801}
+            height={360}
+            className="w-full rounded-xl"
+          />
+          <div>
+            <p className="text-base font-light leading-relaxed text-ink/80">
+              At Plusnet; we provide a variety of connectivity options, ranging
+              from simple business broadband to dedicated internet access
+              solutions and managed MPLS services – giving you a tailored,
+              business-grade, ‘always on’ connection – with performance and
+              price levels to suit your business, and the scale and capacity to
+              grow as you do
+            </p>
+            <Button href="/our-network" className="mt-8">
+              Learn more about our network
+            </Button>
+          </div>
+        </div>
+      </Section>
+    </>
   );
 }
