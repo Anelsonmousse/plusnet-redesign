@@ -20,7 +20,7 @@ export default function HomeHero() {
               the future
               <span className="h-[0.07em] w-[0.45em] shrink-0 rounded-full bg-[#d9d9d9]" />
             </span>
-            <span className="-mt-[0.02em] block text-[17vw] text-[#212121] md:pl-[4vw] md:text-left md:text-[13vw]">
+            <span className="-mt-[0.02em] block text-[11.5vw] text-[#212121] md:text-[10.5vw]">
               of connectivity
             </span>
           </h1>
@@ -72,15 +72,15 @@ export default function HomeHero() {
               </li>
             ))}
           </ul>
-          <dl className="grid grid-cols-2 gap-6 md:gap-8">
+          <dl className="grid grid-cols-2 gap-4 md:gap-5">
             {stats.map((s) => (
               <div
                 key={s.value}
-                className="flex h-32 w-full flex-col justify-end border border-white/25 bg-black/40 px-6 pb-5 text-right backdrop-blur-sm md:w-56"
+                className="flex h-24 w-full flex-col justify-end border border-white/25 bg-black/40 px-4 pb-3.5 text-right backdrop-blur-sm md:w-40"
               >
                 <dt className="sr-only">{s.label}</dt>
-                <dd className="text-4xl font-light tracking-tight md:text-5xl">{s.value}</dd>
-                <dd className="mt-1 text-[11px] font-light uppercase tracking-wider text-white/60">
+                <dd className="text-3xl font-light tracking-tight md:text-4xl">{s.value}</dd>
+                <dd className="mt-1 text-[9px] font-light uppercase tracking-wider text-white/60">
                   {s.label}
                 </dd>
               </div>
