@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Link from "next/link";
 import HeroFigure from "./HeroFigure";
 
 const tags = ["Fibre", "Unlimited"];
@@ -39,26 +37,6 @@ export default function HomeHero() {
         <div className="pointer-events-none relative z-20 -mb-10 mt-4 flex justify-center md:absolute md:inset-x-0 md:bottom-0 md:mb-0 md:mt-0">
           <HeroFigure className="h-[46svh] w-auto md:h-[80svh]" />
         </div>
-
-        {/* Right column: thumbnail card */}
-        <Link
-          href="/package-guide"
-          aria-label="View our broadband packages"
-          className="group absolute right-0 top-[50%] z-30 hidden h-48 w-40 overflow-hidden border border-white/10 bg-[#0a0a0a] md:block"
-        >
-          <Image
-            src="/images/network-illustration.png"
-            alt=""
-            width={801}
-            height={360}
-            className="h-full w-full object-cover opacity-70 transition-opacity group-hover:opacity-100"
-          />
-          <span className="absolute left-1/2 top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-black/70 text-white ring-1 ring-white/30 transition-transform group-hover:scale-110">
-            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4 w-4">
-              <path d="M6 14L14 6M8 6h6v6" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </span>
-        </Link>
 
         {/* Bottom row */}
         <div className="relative z-30 mt-auto flex flex-col gap-6 pb-8 pt-10 md:flex-row md:items-end md:justify-between">
