@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import SocialIcons from "./SocialIcons";
@@ -15,7 +16,23 @@ const quickLinks = [
 export default function Footer() {
   return (
     <footer className="bg-black text-white">
-      <div className="container-site grid gap-10 py-14 md:grid-cols-3">
+      <div className="container-site grid gap-10 py-14 md:grid-cols-2 lg:grid-cols-[1.2fr_1.3fr_0.8fr_0.9fr]">
+        <div>
+          <Link href="/" aria-label="Plusnet home" className="inline-block">
+            <Image
+              src="/images/logo.png"
+              alt="Plusnet"
+              width={205}
+              height={61}
+              className="h-12 w-auto"
+            />
+          </Link>
+          <p className="mt-5 max-w-xs text-sm font-light leading-relaxed text-white/70">
+            Unlimited fibre broadband for homes and businesses across Nigeria —
+            fast, reliable and always on.
+          </p>
+        </div>
+
         <div>
           <h3 className="mb-5 text-lg font-bold">Contact Info</h3>
           <ul className="space-y-3 text-sm font-light text-white/80">
