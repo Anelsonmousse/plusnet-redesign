@@ -47,26 +47,11 @@ export const nav: NavItem[] = [
   },
 ];
 
+export const installationFee = "N75,250";
+
 export const packages = [
-  {
-    name: "Unlimited Access",
-    price: "N19,350",
-    speed: "Up to 10Mbps download and upload speed, burstable to 30Mbps",
-  },
-  {
-    name: "Unlimited Starter",
-    price: "N27,850",
-    speed: "Up to 10Mbps download and upload speed, burstable to 40Mbps",
-  },
-  {
-    name: "Unlimited Extra",
-    price: "N35,470",
-    speed: "Up to 10Mbps download and upload speed, burstable to 60Mbps",
-    featured: true,
-  },
-  {
-    name: "Unlimited Elite",
-    price: "N53,750",
-    speed: "Up to 20Mbps download and upload speed, burstable to 70Mbps",
-  },
+  { name: "Unlimited Access", price: "N19,350", speed: "40 Mbps" },
+  { name: "Unlimited Starter", price: "N26,875", speed: "50 Mbps" },
+  { name: "Unlimited Extra", price: "N35,475", speed: "70 Mbps", featured: true },
+  { name: "Unlimited Elite", price: "N53,750", speed: "80 Mbps" },
 ];

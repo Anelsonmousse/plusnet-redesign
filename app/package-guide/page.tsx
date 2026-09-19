@@ -3,7 +3,7 @@ import Link from "next/link";
 import DarkCta from "@/components/DarkCta";
 import DarkHero from "@/components/DarkHero";
 import SectionHeading from "@/components/SectionHeading";
-import { packages } from "@/lib/site";
+import { installationFee, packages } from "@/lib/site";
 
 export const metadata: Metadata = { title: "Package Guide" };
 
@@ -62,13 +62,22 @@ export default function Packages() {
                 <p className={`text-xs ${p.featured ? "text-white/70" : "text-ink/60"}`}>
                   per month
                 </p>
+                <p className="mt-6 text-2xl font-extrabold tracking-tight">
+                  {p.speed}
+                  <span
+                    className={`ml-2 text-xs font-medium ${
+                      p.featured ? "text-white/70" : "text-ink/60"
+                    }`}
+                  >
+                    avg. download
+                  </span>
+                </p>
                 <ul
-                  className={`mt-6 flex-1 space-y-2.5 text-sm font-light leading-relaxed ${
+                  className={`mt-4 flex-1 space-y-2.5 text-sm font-light leading-relaxed ${
                     p.featured ? "text-white/85" : "text-ink/70"
                   }`}
                 >
-                  <li>{p.speed}</li>
-                  <li>30 days unlimited data</li>
+                  <li>Unlimited data</li>
                   <li>Access policy: 24/7</li>
                   <li>Validity: 30 days</li>
                 </ul>
@@ -85,6 +94,10 @@ export default function Packages() {
               </div>
             ))}
           </div>
+          <p className="mt-8 text-sm font-light text-white/70">
+            One-off installation fee: <span className="font-semibold text-white">{installationFee}</span>.
+            All prices are per month, inclusive of unlimited data.
+          </p>
         </div>
       </section>
 
