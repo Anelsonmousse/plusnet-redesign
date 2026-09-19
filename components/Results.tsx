@@ -1,5 +1,6 @@
 import Link from "next/link";
 import HeroFigure from "./HeroFigure";
+import Ribbon from "./Ribbon";
 
 const ribbonTags = [
   "Unlimited Fibre",
@@ -47,32 +48,6 @@ const links = [
   { label: "Our Network", href: "/our-network" },
 ];
 
-function Ribbon({ reverse = false, className = "" }: { reverse?: boolean; className?: string }) {
-  const row = [...ribbonTags, ...ribbonTags, ...ribbonTags];
-  return (
-    <div
-      aria-hidden
-      className={`absolute left-1/2 w-[140vw] -translate-x-1/2 overflow-hidden bg-brand-dark py-3 text-white shadow-lg shadow-black/40 ${className}`}
-    >
-      <div
-        className={`flex w-max animate-marquee gap-12 whitespace-nowrap ${
-          reverse ? "[animation-direction:reverse]" : ""
-        }`}
-      >
-        {[0, 1].map((k) => (
-          <div key={k} className="flex shrink-0 gap-12 pr-12">
-            {row.map((t, i) => (
-              <span key={i} className="text-sm font-bold uppercase tracking-wider md:text-base">
-                {t}
-              </span>
-            ))}
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
 export default function Results() {
   return (
     <section className="relative isolate overflow-hidden bg-black pb-16 pt-14 text-white md:pb-24 md:pt-20">
@@ -91,8 +66,8 @@ export default function Results() {
           <br />
           Results
         </h2>
-        <Ribbon className="top-1/2 z-20 -translate-y-1/2 -rotate-[5deg]" />
-        <Ribbon reverse className="top-1/2 z-20 -translate-y-1/2 rotate-[5deg]" />
+        <Ribbon tags={ribbonTags} className="top-1/2 z-20 -translate-y-1/2 -rotate-[5deg]" />
+        <Ribbon tags={ribbonTags} reverse className="top-1/2 z-20 -translate-y-1/2 rotate-[5deg]" />
       </div>
 
       {/* Figure + stat cards */}
