@@ -155,12 +155,12 @@ export default function Header() {
             })}
           </nav>
 
-          <Link
-            href="/support-portal"
+          <a
+            href={site.portal}
             className="hidden rounded-md bg-white px-7 py-2.5 text-xs font-medium text-black transition-colors hover:bg-brand hover:text-white lg:block"
           >
             Login
-          </Link>
+          </a>
 
           <button
             type="button"
@@ -246,6 +246,14 @@ export default function Header() {
               </li>
             ))}
           </ul>
+          <div className="container-wide pb-4">
+            <a
+              href={site.portal}
+              className="block rounded-md bg-white py-3 text-center text-xs font-bold uppercase tracking-wider text-black transition-colors hover:bg-brand hover:text-white"
+            >
+              Login
+            </a>
+          </div>
         </div>
       </div>
     </header>

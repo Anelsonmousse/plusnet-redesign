@@ -34,12 +34,12 @@ First-time setup on the server:
 
 ```bash
 cd /root/repos
-git clone https://github.com/Anelsonmousse/plusnet-redesign.git
-cd plusnet-redesign && ./deploy.sh
+git clone https://github.com/Plusnet-Org/Plusnet-landing-page.git
+cd Plusnet-landing-page && ./deploy.sh
 cp deploy/nginx-plusnet.ng.conf /etc/nginx/sites-available/plusnet.ng
 ln -s /etc/nginx/sites-available/plusnet.ng /etc/nginx/sites-enabled/
 nginx -t && systemctl reload nginx
 certbot --nginx -d plusnet.ng -d www.plusnet.ng   # once DNS points here
 ```
 
-Every later release is just `cd /root/repos/plusnet-redesign && ./deploy.sh`.
+Every later release is just `cd /root/repos/Plusnet-landing-page && ./deploy.sh`.

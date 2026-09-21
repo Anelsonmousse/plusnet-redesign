@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Rebuild and restart the site container on the VPS.
-# Usage (on the server): cd /root/repos/plusnet-redesign && ./deploy.sh
+# Usage (on the server): cd /root/repos/Plusnet-landing-page && ./deploy.sh
 set -euo pipefail
 
 NAME=plusnet-site

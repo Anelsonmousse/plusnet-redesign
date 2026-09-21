@@ -2,6 +2,7 @@ export const site = {
   name: "Plusnet Broadband Services Limited",
   phone: "08078089082",
   email: "info@plusnet.ng",
+  portal: "https://portal.plusnet.ng",
   offices: [
     { city: "Abuja Office", address: "#8 Toamasina Street, Wuse 2. FCT, Abuja" },
     { city: "Lagos Office", address: "#39 Osolo Way Ajao Estate Isolo Lagos" },
@@ -42,7 +43,7 @@ export const nav: NavItem[] = [
     href: "/support-portal",
     children: [
       { label: "Help & Support", href: "/support-portal" },
-      { label: "My Account", href: "/support-portal" },
+      { label: "My Account", href: "https://portal.plusnet.ng" },
     ],
   },
 ];
